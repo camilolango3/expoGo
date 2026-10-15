@@ -5,12 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Informativa } from "./src/componentes/Informativa";
-import Capturados from "./src/componentes/Capturados";
-import Favoritos from "./src/componentes/Favoritos";
-import Lista from "./src/componentes/Lista";
-import Usuario from "./src/componentes/Usuario";
-import Pokemon from "./src/componentes/Pokemon";
+import Informativa from "./src/components/Informativa";
+import Capturados from "./src/components/Capturados";
+import Favoritos from "./src/components/Favoritos";
+import Lista from "./src/components/Lista";
+import Usuario from "./src/components/Usuario";
+import Pokemon from "./src/components/Pokemon";
 
 
 const Stack = createStackNavigator();

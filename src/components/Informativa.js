@@ -1,23 +1,36 @@
-import { StyleSheet, View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
-export function Informativa({ navigation }) {
+export default function Informativa({ navigation }) {
   const secciones = [
     {
       titulo: "Lista de Pokemon",
-      descripcion: "Consulta Pokemon desde PokeAPI y revisa su imagen, tipo, peso y altura.",
+      descripcion:
+        "Consulta Pokemon desde PokeAPI y revisa sus imagenes, tipos, peso y altura.",
     },
     {
       titulo: "Favoritos",
-      descripcion: "Marca los Pokemon que mas te interesan para encontrarlos rapidamente.",
+      descripcion:
+        "Marca los Pokemon que mas te interesan para encontrarlos rapidamente.",
     },
     {
       titulo: "Capturados",
-      descripcion: "Simula capturas, guarda tu coleccion y completa el album poco a poco.",
+      descripcion:
+        "Guarda los Pokemon que captures y completa tu coleccion poco a poco.",
     },
   ];
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.content}
+    >
       <View style={styles.header}>
         <Image
           source={{
@@ -25,28 +38,48 @@ export function Informativa({ navigation }) {
           }}
           style={styles.imagen}
         />
+
         <Text style={styles.titulo}>Pokedex informativa</Text>
+
         <Text style={styles.descripcion}>
-          Aplicacion creada para explorar Pokemon, guardar favoritos y llevar un
-          registro de capturas usando datos de PokeAPI.
+          Aplicacion creada para explorar Pokemon, guardar favoritos
+          y llevar un registro de capturas utilizando los datos de PokeAPI.
         </Text>
       </View>
 
       <View style={styles.infoCard}>
-        <Text style={styles.subtitulo}>Que puedes hacer</Text>
+        <Text style={styles.subtitulo}>¿Que puedes hacer?</Text>
+
         {secciones.map((seccion) => (
           <View key={seccion.titulo} style={styles.item}>
-            <Text style={styles.itemTitulo}>{seccion.titulo}</Text>
-            <Text style={styles.itemTexto}>{seccion.descripcion}</Text>
+            <Text style={styles.itemTitulo}>
+              {seccion.titulo}
+            </Text>
+
+            <Text style={styles.itemTexto}>
+              {seccion.descripcion}
+            </Text>
           </View>
         ))}
       </View>
 
       <View style={styles.infoCard}>
         <Text style={styles.subtitulo}>Fuente de datos</Text>
+
         <Text style={styles.texto}>
-          La informacion principal de cada Pokemon se obtiene desde PokeAPI,
-          una API publica utilizada para consultar datos, sprites y estadisticas.
+          La informacion de los Pokemon se obtiene desde PokeAPI,
+          una API publica que permite consultar nombres, imagenes,
+          tipos y estadisticas de diferentes Pokemon.
+        </Text>
+      </View>
+
+      <View style={styles.infoCard}>
+        <Text style={styles.subtitulo}>Objetivo de la aplicacion</Text>
+
+        <Text style={styles.texto}>
+          El objetivo es facilitar la exploracion de Pokemon,
+          permitir guardar los favoritos y registrar los Pokemon
+          capturados desde una aplicacion sencilla y facil de utilizar.
         </Text>
       </View>
 
@@ -54,7 +87,9 @@ export function Informativa({ navigation }) {
         style={styles.boton}
         onPress={() => navigation.navigate("Lista")}
       >
-        <Text style={styles.botonTexto}>Ver lista de Pokemon</Text>
+        <Text style={styles.botonTexto}>
+          Ver lista de Pokemon
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -63,81 +98,100 @@ export function Informativa({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#f1f5f9",
   },
+
   content: {
     padding: 20,
     paddingBottom: 35,
   },
+
   header: {
     alignItems: "center",
+    backgroundColor: "#ffffff",
+    padding: 20,
+    borderRadius: 18,
     marginBottom: 20,
+    elevation: 3,
   },
+
   imagen: {
-    width: 170,
-    height: 170,
+    width: 160,
+    height: 160,
     resizeMode: "contain",
     marginBottom: 10,
   },
+
   titulo: {
     fontSize: 26,
     fontWeight: "bold",
-    color: "#333",
+    color: "#1e293b",
     textAlign: "center",
     marginBottom: 10,
   },
+
   descripcion: {
-    fontSize: 16,
-    color: "#555",
+    fontSize: 15,
+    color: "#64748b",
     textAlign: "center",
-    lineHeight: 22,
+    lineHeight: 23,
   },
+
   infoCard: {
-    backgroundColor: "#fff",
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 15,
+    backgroundColor: "#ffffff",
+    borderRadius: 15,
+    padding: 18,
+    marginBottom: 16,
     borderWidth: 1,
-    borderColor: "#e5e5e5",
+    borderColor: "#e2e8f0",
+    elevation: 2,
   },
+
   subtitulo: {
-    fontSize: 18,
+    fontSize: 19,
     fontWeight: "bold",
-    color: "#444",
-    marginBottom: 12,
+    color: "#2563eb",
+    marginBottom: 15,
   },
+
   item: {
     borderLeftWidth: 4,
-    borderLeftColor: "#007bff",
-    paddingLeft: 10,
-    marginBottom: 12,
+    borderLeftColor: "#3b82f6",
+    paddingLeft: 12,
+    marginBottom: 16,
   },
+
   itemTitulo: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#333",
-    marginBottom: 4,
+    color: "#334155",
+    marginBottom: 5,
   },
+
   itemTexto: {
     fontSize: 14,
-    color: "#666",
-    lineHeight: 20,
-  },
-  texto: {
-    fontSize: 15,
-    color: "#555",
+    color: "#64748b",
     lineHeight: 21,
   },
+
+  texto: {
+    fontSize: 15,
+    color: "#64748b",
+    lineHeight: 23,
+  },
+
   boton: {
-    backgroundColor: "#28a745",
-    paddingVertical: 12,
+    backgroundColor: "#2563eb",
+    paddingVertical: 15,
     paddingHorizontal: 20,
-    borderRadius: 8,
+    borderRadius: 12,
     alignItems: "center",
     marginTop: 5,
+    elevation: 3,
   },
+
   botonTexto: {
-    color: "#fff",
+    color: "#ffffff",
     fontSize: 16,
     fontWeight: "bold",
   },

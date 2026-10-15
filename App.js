@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Informativa from "./src/components/Informativa";
+import {Informativa} from "./src/components/Informativa";
 import Capturados from "./src/components/Capturados";
 import Favoritos from "./src/components/Favoritos";
 import Lista from "./src/components/Lista";
